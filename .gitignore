@@ -4,6 +4,7 @@ capybara-*.html
 /log
 /tmp
 /db/*.sqlite3
+/config/database.yml
 /db/*.sqlite3-journal
 /public/system
 /coverage/
@@ -42,3 +43,4 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+/vendor
