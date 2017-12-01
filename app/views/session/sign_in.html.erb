@@ -1,0 +1,21 @@
+<%= provide :title, t("session.sign_in.title") %>
+<div class="body"></div>
+<div class="grad"></div>
+<div class="header">
+  <div>
+    <span><%= t ".logo" %></span>
+    <%= t ".logo1" %>
+  </div>
+</div>
+<br>
+<div class="login">
+  <%= form_for :session, url: signin_path do |f| %>
+    <%= f.text_field :username, placeholder: "username" %>
+    <%= f.password_field :password, placeholder: "password" %>
+    <%= f.label :remember_me do %>
+      <%= f.check_box :remember_me %>
+      <span><%= t ".remember_me" %></span>
+    <% end %>
+    <%= f.submit t(".title") %>
+  <% end %>
+</div>

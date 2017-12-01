@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129085618) do
+ActiveRecord::Schema.define(version: 20171130132212) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.integer "target_id"
     t.string "type_object"
     t.integer "action"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_activities_on_users_id"
+    t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
   create_table "course_subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20171129085618) do
     t.boolean "status_course"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name_course"], name: "index_courses_on_name_course"
   end
 
   create_table "subjects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 20171129085618) do
     t.text "info_detail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name_subject"], name: "index_subjects_on_name_subject"
   end
 
   create_table "tasks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -57,6 +59,7 @@ ActiveRecord::Schema.define(version: 20171129085618) do
     t.bigint "subject_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name_task"], name: "index_tasks_on_name_task"
     t.index ["subject_id"], name: "index_tasks_on_subject_id"
   end
 
@@ -100,10 +103,11 @@ ActiveRecord::Schema.define(version: 20171129085618) do
     t.string "university"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "remember_digest"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "activities", "users", column: "users_id"
+  add_foreign_key "activities", "users"
   add_foreign_key "course_subjects", "courses"
   add_foreign_key "course_subjects", "subjects"
   add_foreign_key "tasks", "subjects"
