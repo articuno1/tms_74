@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 /* Header*/
 
 .header{
@@ -25,42 +26,46 @@
 .header div span{
   color: #5379fa !important;
 }
+
 /* background */
-body{
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    color: #fff;
-    font-size: 12px;
-}
 
 .body{
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -40px;
-  bottom: -40px;
-  width: auto;
-  height: auto;
-  background-image: url(/assets/background.jpg);
-  background-size: cover;
-  -webkit-filter: blur(5px);
-  z-index: -0;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -40px;
+    bottom: -40px;
+    width: auto;
+    height: 1000px;
+    background-image: url(/assets/background.jpg);
+    background-size: cover;
+    -webkit-filter: blur(5px);
+    z-index: 0;
 }
 .grad{
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -40px;
-  bottom: -40px;
-  width: auto;
-  height: auto;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
-  z-index: 1;
-  opacity: 0.7;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -40px;
+    bottom: -40px;
+    width: auto;
+    height: 1000px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+    z-index: 1;
+    opacity: 0.7;
 }
 
-/* Buttons */
+/* Course index */
+.course{
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-light;
+  }
+ }
+/* Sign in */
 .login{
   margin-top: -150px;
   text-align: full-center;
@@ -153,6 +158,109 @@ body{
   outline: 0;
 }
 
+.login span{
+  color: #FAAC58;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+/* Sign up */
+
+.signup{
+  margin-top: -150px;
+  text-align: full-center;
+  position: absolute;
+  top: calc(50% + 30px);
+  left: calc(50% - 200px);
+  height: auto;
+  width: 350px;
+  z-index: 2;
+  border: solid 0.5px;
+  border-radius: 15px;
+  padding:50px 0px 20px 50px;
+  background:rgba(5,5,5,.8);
+}
+
+.signup input[type=text]{
+  width: 260px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.signup input[type=password]{
+  width: 260px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+
+.signup input[type=submit]{
+  width: 260px;
+  height: 50px;
+  background: #2ECCFA;
+  /*border: 1px solid #fff;*/
+  cursor: pointer;
+  border-radius: 2px;
+  /*color: #a18d6c;*/
+  font-family: 'Exo', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 6px;
+  margin-top: 10px;
+
+  background-image: -webkit-linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+
+.signup input[type=submit]:hover{
+  /*opacity: 0.8;*/
+  color: #fff;
+  outline: 0;
+  background-position: 0;
+}
+
+.signup input[type=submit]:active{
+  opacity: 0.6;
+}
+
+.signup input[type=text]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.signup input[type=password]:focus{
+  outline: none;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.signup input[type=submit]:focus{
+  /*outline: none;*/
+  color: #FA5858;
+  outline: 0;
+}
+
 ::-webkit-input-placeholder{
    color: rgba(255,255,255,0.6);
 }
@@ -229,20 +337,18 @@ p {
 /* header */
 #logo {
   float: left;
-  margin-top: -100px;
-  margin-left: 50px;
-  font-size: 2.7em;
-  color: #F78181;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
-  text-align: full-center;
   font-weight: bold;
-  margin-bot: 50px;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .logo{

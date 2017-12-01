@@ -1,0 +1,9 @@
+<%= form_for @user do |f| %>
+  <%= f.text_field :username, placeholder: t(".username") %>
+  <%= f.password_field :password, placeholder: t(".password") %>
+  <%= f.password_field :password_confirmation, placeholder: t(".confirm") %>
+  <%= f.text_field :fullname, placeholder: t(".fullname") %>
+  <%= f.text_field :university, placeholder: t(".university") %>
+  <%= f.submit yield(:button_text) %>
+  <%= render "shared/error_messages", object: @user %>
+<% end %>
