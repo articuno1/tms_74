@@ -1,0 +1,7 @@
+users:
+  maximum_username: 60
+  minimum_username: 5
+  maximum_password: 250
+  minimum_password: 6
+remember:
+  ischeck: "1"
