@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130132212) do
+ActiveRecord::Schema.define(version: 20171129085618) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "user_id"
+    t.bigint "users_id"
     t.integer "target_id"
     t.string "type_object"
     t.integer "action"
