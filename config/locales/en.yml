@@ -1,9 +1,35 @@
 en:
+  static_pages:
+    home:
+      title: "Home"
+      hello: "Hello, Newbie!"
+      welcome: "Welcome To Framgia Training System"
+      logo: "Framgia Training System"
+      thisis: "This is the home page for the"
+      project: "Project."
+      signin: "Sign in now!"
+    about:
+      title: "About"
+      notify: "The Framgia Training System is a project for Group 2 and screencast series to teach web development with Ruby on Rails. This is the sample project for the tutorial."
+    help:
+      title: "Help"
+      notify: "Get help on the Ruby on Rails Tutorial at the Rails Tutorial help page. To get help on this sample app, see the Ruby on Rails Tutorial book."
+    contact:
+      title: "Contact"
+      notify: "Please, Contact the Group 2 about the Framgia Training System at the Contact Page"
   hello: "Hello world"
   layouts:
     application:
       init: "InitProject"
       title: "Framgia Training System"
+    header:
+      title: "Framgia Training System"
+      home: "Home"
+      help: "Help"
+      login: "Login"
+      signup: "Sign Up"
+      logout: "Sign Out"
+      resignin: "Sign In"
     footer:
       contact: "Contact"
       about: "About"
@@ -18,17 +44,33 @@ en:
       logo1: "Training System"
       title: "Sign In"
       remember_me: "Remember on this browser"
+      username: "Enter username"
+      password: "Enter password"
   flash:
+    signup_success: "Signup Succesfully"
     login_success: "Login Succesfully"
     user_invalid: "Invalid User/Password"
-    danger: "Not Found"
+    delete: "Delete Succesfully"
+    undelete: "Not Delete"
+    danger: "Not Found User"
+  shared:
+    error_messages:
+      error: "The form contains"
   users:
     show:
       logo: "Training Framgia System"
       signout: "Sign Out"
       home: "Home"
       page1: "Page 1"
+    new:
+      logo: "Framgia"
+      logo1: "Training System"
+      create: "Sign Up"
     form_signup:
       password_confirmation: "Password Confirmation"
-      fullname: "Your Full Name"
       address: "Your Address"
+      username: "Enter Your Username"
+      password: "Enter Your Password"
+      confirm: "Password Confirm"
+      fullname: "Enter Your Full Name"
+      university: "Enter Your University"

@@ -13,8 +13,12 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false}
   validates :fullname, presence: true, length:
     {maximum: Settings.users.maximum_username, minimum: Settings.users.minimum_username}
-  validates :password_digest, presence: true, length: {maximum: Settings.users.maximum_password,
-    minimum: Settings.users.minimum_password}
+  validates :password, presence: true, length:
+  {maximum: Settings.users.maximum_password, minimum: Settings.users.minimum_password}
+  validates :username, presence: true,
+    format: {with: /\A[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*\z/},
+    uniqueness: {case_sensitive: false}
+  validates :university, presence: true
 
   class << self
     def digest string
