@@ -7,7 +7,7 @@ class SessionController < ApplicationController
       log_in user
       remember_params user
       flash[:success] = t "flash.login_success"
-      redirect_back_or user
+      redirect_back_or home_path
     else
       flash.now[:danger] = t "flash.user_invalid"
       render :sign_in

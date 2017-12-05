@@ -74,3 +74,65 @@ en:
       confirm: "Password Confirm"
       fullname: "Enter Your Full Name"
       university: "Enter Your University"
+  title: "Framgia Training System"
+  home: "Home"
+  course: "Courses"
+  subject: "Subjects"
+  task: "Tasks"
+  user: "Users"
+  layouts:
+    application:
+      init: "InitProject"
+    header:
+      logo: "Framgia Training"
+      username: "Alexander Pierce"
+      calendar: "Member since Nov. 2012"
+      followers: "Followers"
+      friends: "Friends"
+      profile: "Profile"
+      sign: "Sign out"
+    footer:
+      copy: "2017 "
+      name: "Framgia Training System."
+    right-bar:
+      username: "Alexander Pierce"
+      active: "Online"
+      main: "MAIN NAVIGATION"
+      dashboard: "Dashboard"
+      course: "Courses"
+      users: "users"
+      search: "Search...."
+  views:
+    index:
+      home:
+        dashboard: "Dashboard"
+        panel: "Control panel"
+        more_info: "More info"
+        trainers:
+          num: "6"
+          name: "Trainers"
+        trainee:
+          num: "40"
+          name: "Trainee"
+        course:
+          num: "4"
+          name: "Course"
+        map: "Maps"
+        visitors: "Visitors"
+    courses:
+      course: "Courses"
+      ma: "[DN-OE09-Ruby]"
+      name: "Da Nang Open Batch 9"
+      detail: "Ruby Open Education training"
+      numtrainers: ": 3"
+      numtrainee: ": 19"
+    subjects:
+      sub: "Subjects"
+      name: "Git Tutorial "
+      time: "2 days"
+      detail: "Start Git for your project today."
+      link: "[Show content]"
+    tasks:
+      h3: "Trainees progress"
+      name: "From zero to deploy"
+      detail: "Get an introduction to numbers, Strings, properties, and methods."

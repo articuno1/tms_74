@@ -1,0 +1,98 @@
+<div class="content">
+  <section class="content-header">
+    <h1>
+      <%= t "views.index.home.dashboard" %>
+      <small><%= t "views.index.home.panel" %></small>
+    </h1>
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <div class="col-lg-3 col-xs-6">
+        <div class="small-box bg-aqua">
+          <div class="inner">
+            <h3><%= t "views.index.home.trainers.num" %></h3>
+            <p><%= t "views.index.home.trainers.name" %></p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-bag"></i>
+          </div>
+          <a href="#" class="small-box-footer"><%= t "views.index.home.more_info" %>
+            <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-green">
+          <div class="inner">
+            <h3><%= t "views.index.home.trainee.num" %></h3>
+            <p><%= t "views.index.home.trainee.name" %></p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-stats-bars"></i>
+          </div>
+          <a href="#" class="small-box-footer"><%= t "views.index.home.more_info" %>
+            <i class="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div>
+      <!-- ./col -->
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-yellow">
+          <div class="inner">
+            <h3><%= t "views.index.home.course.num" %></h3>
+            <p><%= t "views.index.home.course.name" %></p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-person-add"></i>
+          </div>
+          <a>
+            <%= link_to t("views.index.home.more_info"),
+              courses_path, class: "small-box-footer" %>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <section class="col-lg-7 connectedSortable">
+        <div class="nav-tabs-custom">
+          <ul class="nav nav-tabs pull-right">
+            <li class="pull-left header">
+              <i class="fa fa-inbox"></i><%= t "views.index.home.map" %>
+            </li>
+          </ul>
+          <div class="tab-content no-padding">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4028047313536!2d105.78178195013899!3d21.01656288593625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4c85d8c3f1%3A0xd2c6f1171eb5829a!2sFramgia+Vietnam!5e0!3m2!1svi!2s!4v1512092851639" width="568" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="col-lg-5 connectedSortable">
+        <div class="box box-solid bg-light-blue-gradient">
+          <div class="box-header">
+            <div class="pull-right box-tools">
+              <button type="button" data-toggle="tooltip" title="Date range"
+              class="btn btn-primary btn-sm daterange pull-right">
+                <i class="fa fa-calendar"></i>
+              </button>
+              <button type="button" class="btn btn-primary btn-sm pull-right"
+              data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fa fa-minus"></i>
+              </button>
+            </div>
+            <i class="fa fa-map-marker"></i>
+
+            <h3 class="box-title">
+              <%= t "views.index.home.visitors" %>
+            </h3>
+          </div>
+          <div class="box-body">
+            <div id="world-map"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>

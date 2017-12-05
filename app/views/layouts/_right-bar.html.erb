@@ -1,0 +1,36 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="images/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p><%= t "layouts.right-bar.username" %></p>
+          <a href="#"><%= t "layouts.right-bar.active" %></a>
+        </div>
+      </div>
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control"
+            placeholder= <%= t "layouts.right-bar.search" %> >
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <ul class="sidebar-menu">
+        <li class="header"><%= t "layouts.right-bar.main" %></li>
+        <li><a href="/home">
+          <i class="fa fa-book"></i> <span><%= t "layouts.right-bar.dashboard" %></span>
+        </a></li>
+        <li><a href="/courses">
+          <i class="fa fa-circle-o"></i> <span><%= t "layouts.right-bar.course" %></span>
+        </a></li>
+        <li><a href="#">
+          <i class="fa fa-edit"></i> <span><%= t "layouts.right-bar.users" %></span>
+        </a></li>
+      </ul>
+    </section>
+  </aside>
