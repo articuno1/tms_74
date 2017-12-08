@@ -19,7 +19,9 @@ class User < ApplicationRecord
   validates :username, presence: true,
     format: {with: /\A[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*\z/},
     uniqueness: {case_sensitive: false}
+  validates :role, presence: true
   validates :university, presence: true
+  enum role: {trainer: 0, trainee: 1}
 
   class << self
     def digest string

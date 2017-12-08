@@ -73,6 +73,17 @@ en:
     updated: "Update Succesfully"
     please: "Please Sign In."
     error: "Sorry, user id does not exist"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              blank: "Name can not be blank"
+              too_long: "Name must be less than 150 characters"
+              too_short: "Name too short"
+              invalid: "This inforation is invalid"
+              taken: "This information has been taken"
   shared:
     error_messages:
       error: "The form contains"
@@ -97,6 +108,10 @@ en:
       confirm: "Password Confirm"
       fullname: "Enter Your Full Name"
       university: "Enter Your University"
+      trainer: "Trainer"
+      trainee: "Trainee"
+      trainer_v: "trainer"
+      trainee_v: "trainee"
     edit:
       title: "Edit User"
       infor: "Update Your Profile"

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, except: :new
+  before_action :find_user, except: %i(create new index)
   before_action :logged_in_user, only: %i(edit update create)
   before_action :correct_user, only: %i(edit update)
   def new
@@ -53,6 +53,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:avatar, :username, :password,
-      :password_confirmation, :fullname, :university)
+      :password_confirmation, :fullname, :role, :university)
   end
 end
