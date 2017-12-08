@@ -5,4 +5,12 @@ users:
   minimum_password: 6
 remember:
   ischeck: "1"
-
+size:
+  gravatar: 80
+  image: 85
+  user_image: 18
+  minimum_image: 5
+image_default: "avatar02.png"
+warning:
+  avatar: "should be less than 5MB"
+  limit: [400, 400]

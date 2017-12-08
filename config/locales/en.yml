@@ -23,17 +23,34 @@ en:
       init: "InitProject"
       title: "Framgia Training System"
     header:
-      title: "Framgia Training System"
+      title: "F.T.S"
       home: "Home"
       help: "Help"
       login: "Login"
       signup: "Sign Up"
-      logout: "Sign Out"
+      signout: "Sign Out"
       resignin: "Sign In"
+      edit: "Edit Your Profile"
+      username: "Alexander Pierce"
+      calender: "Member since Nov. 2012"
+      followers: "Followers"
+      friends: "Friends"
+      profile: "Profile"
+      account: "Account"
     footer:
       contact: "Contact"
       about: "About"
       author: "The application design by Group 2"
+      copy: "2017 "
+      name: "Framgia Training System."
+    right-bar:
+      username: "Alexander Pierce"
+      active: "Online"
+      main: "MAIN NAVIGATION"
+      dashboard: "Dashboard"
+      course: "Courses"
+      users: "users"
+      search: "Search...."
   layouts_user:
     sign_in:
       title: "Sign In"
@@ -53,15 +70,21 @@ en:
     delete: "Delete Succesfully"
     undelete: "Not Delete"
     danger: "Not Found User"
+    updated: "Update Succesfully"
+    please: "Please Sign In."
+    error: "Sorry, user id does not exist"
   shared:
     error_messages:
       error: "The form contains"
   users:
     show:
+      title: "Profile"
       logo: "Training Framgia System"
       signout: "Sign Out"
       home: "Home"
       page1: "Page 1"
+      username: "Username"
+      fullname: "Full Name"
     new:
       logo: "Framgia"
       logo1: "Training System"
@@ -74,34 +97,24 @@ en:
       confirm: "Password Confirm"
       fullname: "Enter Your Full Name"
       university: "Enter Your University"
+    edit:
+      title: "Edit User"
+      infor: "Update Your Profile"
+      confirm: "Confirmation"
+      save: "Save changes"
+    form_edit:
+      create: "Create my account"
+      upload: "Upload Avatar"
+      password: "Enter Your Password"
+      confirm: "Password Confirm"
+      fullname: "Enter Your Full Name"
+      university: "Enter Your University"
   title: "Framgia Training System"
   home: "Home"
   course: "Courses"
   subject: "Subjects"
   task: "Tasks"
   user: "Users"
-  layouts:
-    application:
-      init: "InitProject"
-    header:
-      logo: "Framgia Training"
-      username: "Alexander Pierce"
-      calendar: "Member since Nov. 2012"
-      followers: "Followers"
-      friends: "Friends"
-      profile: "Profile"
-      sign: "Sign out"
-    footer:
-      copy: "2017 "
-      name: "Framgia Training System."
-    right-bar:
-      username: "Alexander Pierce"
-      active: "Online"
-      main: "MAIN NAVIGATION"
-      dashboard: "Dashboard"
-      course: "Courses"
-      users: "users"
-      search: "Search...."
   views:
     index:
       home:
@@ -136,3 +149,4 @@ en:
       h3: "Trainees progress"
       name: "From zero to deploy"
       detail: "Get an introduction to numbers, Strings, properties, and methods."
+
