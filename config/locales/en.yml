@@ -49,7 +49,7 @@ en:
       main: "MAIN NAVIGATION"
       dashboard: "Dashboard"
       course: "Courses"
-      users: "users"
+      users: "Users"
       search: "Search...."
   layouts_user:
     sign_in:
@@ -73,6 +73,8 @@ en:
     updated: "Update Succesfully"
     please: "Please Sign In."
     error: "Sorry, user id does not exist"
+    nottrainer: "Sorry, You don't have permission to access"
+    load_user: "Please, Loading page"
   activerecord:
     errors:
       models:
@@ -94,8 +96,13 @@ en:
       signout: "Sign Out"
       home: "Home"
       page1: "Page 1"
-      username: "Username"
-      fullname: "Full Name"
+      username: "Username: "
+      fullname: "Full Name: "
+      university: "University/Company: "
+      join: "Day_Join: "
+      modify: "Modify"
+      action: "Action"
+      more: "More... "
     new:
       logo: "Framgia"
       logo1: "Training System"
@@ -124,6 +131,11 @@ en:
       confirm: "Password Confirm"
       fullname: "Enter Your Full Name"
       university: "Enter Your University"
+    user:
+      delete: "Delete"
+      sure: "Are you sure?"
+    index:
+      title: "All Users"
   title: "Framgia Training System"
   home: "Home"
   course: "Courses"

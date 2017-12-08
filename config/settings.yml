@@ -14,3 +14,6 @@ image_default: "avatar02.png"
 warning:
   avatar: "should be less than 5MB"
   limit: [400, 400]
+per_page: 3
+image:
+  maximum_length: 50

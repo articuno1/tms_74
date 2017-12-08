@@ -3,10 +3,10 @@
     <div class="user-panel">
       <div class="pull-left image">
       >
-        <%= image_tag @user.avatar, size: Settings.size.image %>
+        <%= image_tag current_user.avatar, size: Settings.size.image %>
       </div>
       <div class="pull-left info">
-        <p><%= @user.fullname %></p>
+        <p><%= current_user.fullname %></p>
         <a href="#"><%= t "layouts.right-bar.active" %></a>
       </div>
     </div>
@@ -14,9 +14,9 @@
       <div class="input-group">
         <input type="text" name="q" class="form-control"
           placeholder= <%= t "layouts.right-bar.search" %> >
-            <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-              <i class="fa fa-search"></i>
+          <span class="input-group-btn">
+            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+            <i class="fa fa-search"></i>
             </button>
           </span>
       </div>
@@ -41,7 +41,7 @@
         <a href="#">
           <i class="fa fa-edit"></i>
           <span>
-            <%= t "layouts.right-bar.users" %>
+            <%= link_to t(".users"), users_path %>
           </span>
         </a>
       </li>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, except: :new
   before_action :find_user, except: %i(create new index)
-  before_action :logged_in_user, only: %i(edit update create)
   before_action :correct_user, only: %i(edit update)
   def new
     @user = User.new
@@ -19,6 +19,10 @@ class UsersController < ApplicationController
 
   def show; end
 
+  def index
+    @users = User.paginate page: params[:page], per_page: Settings.per_page
+  end
+
   def edit; end
 
   def update
@@ -28,6 +32,15 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "flash.delete"
+    else
+      flash[:danger] = t "flash.undelete"
+    end
+    redirect_to users_path
   end
 
   private
@@ -54,5 +67,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:avatar, :username, :password,
       :password_confirmation, :fullname, :role, :university)
+  end
+
+  def trainer_user
+    return if current_user.trainer?
+    flash[:danger] = t "flash.nottrainer"
+    redirect_to users_path
   end
 end
