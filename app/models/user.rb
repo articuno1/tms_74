@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  mount_uploader :avatar, PictureUploader
   validates :username, presence: true, length:
     {maximum: Settings.users.maximum_username, minimum: Settings.users.minimum_username},
     format: {with: /\A[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*\z/},
@@ -44,5 +45,13 @@ class User < ApplicationRecord
   def remember
     self.remember_token = User.new_token
     update_attribute :remember_digest, User.digest(remember_token)
+  end
+
+  private
+
+  def picture
+    if avatar.size > Settings.size.minimum_image.megabytes
+      errors.add(:avatar, Settings.warning.avatar)
+    end
   end
 end

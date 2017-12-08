@@ -11,19 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap
 //= require rails-ujs
 //= require bootstrap.min
+//= require jquery-ui.min.js
+//= require moment.min.js
+//= require daterangepicker.js
+//= require jquery.knob.js
 //= require turbolinks
-//= require demo
-//= require dashboard
 //= require bootstrap3-wysihtml5.all.min
-//= require dashboard
-//= require npm
-//= require Chart
-//= require Chart.min
-//= require app
-//= require app.min
-//= require bootstrap
-//= require jquery.dataTables
-//= require jquery.dataTables.min
+//= require jquery.dataTables.js

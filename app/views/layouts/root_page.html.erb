@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %></title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= render "layouts/rails_default" %>
     <%= render "layouts/shim" %>
   </head>
-  <body class="hold-transition skin-blue sidebar-mini">
-    <%= render "layouts/header" %>
-    <%= render "layouts/right-bar" %>
-    <div class="content-wrapper">
+  <body>
+    <div class="container">
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>

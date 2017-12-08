@@ -1,0 +1,14 @@
+<%= form_for @user do |f| %>
+  <div class="form-img">
+    <%= image_tag @user.avatar.url, size: Settings.size.image %>
+    <span class="picture">
+      <%= f.file_field :avatar %>
+    </span>
+  </div>
+  <%= f.text_field :fullname, placeholder: t(".fullname") %>
+  <%= f.password_field :password, placeholder: t(".password") %>
+  <%= f.password_field :password_confirmation, placeholder: t(".confirm") %>
+  <%= f.text_field :university, placeholder: t(".university") %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <%= render "shared/error_messages", object: @user %>
+<% end %>
