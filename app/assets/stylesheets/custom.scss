@@ -1,9 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$gray-lighter: "#0000";
-$gray-light: "#000";
-$state-danger-text: "#fff";
+$gray-medium-light: #eaeaea;
+$gray-light: #777;
+$gray: #555;
+$gray-darker: #222;
 
 /* Header*/
 
@@ -78,6 +79,39 @@ $state-danger-text: "#fff";
     border-bottom: 1px solid #0000;
   }
  }
+
+.ls-all {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-light;
+  }
+}
+
+.ls-sub {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-light;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  width: 33.3333%;
+}
+
 /* Sign in */
 .login{
   margin-top: -150px;
@@ -395,6 +429,18 @@ p {
     }
   }
 }
+
+/* Course index */
+.course {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-light;
+  }
+ }
+View
 
 /* forms */
 

@@ -75,6 +75,7 @@ en:
     error: "Sorry, user id does not exist"
     nottrainer: "Sorry, You don't have permission to access"
     load_user: "Please, Loading page"
+    danger1: "Not Found Courses"
   activerecord:
     errors:
       models:
@@ -136,44 +137,40 @@ en:
       sure: "Are you sure?"
     index:
       title: "All Users"
-  title: "Framgia Training System"
-  home: "Home"
-  course: "Courses"
-  subject: "Subjects"
-  task: "Tasks"
-  user: "Users"
-  views:
+  courses:
+    show:
+      title: "Courses"
+      desc: "Description of Course: "
+      created: "Created at: "
+      subjects: "Subjects of this Course"
+      trainees: "Trainees of this Course"
+      trainers: "Trainers of this Course"
     index:
-      home:
-        dashboard: "Dashboard"
-        panel: "Control panel"
-        more_info: "More info"
-        trainers:
-          num: "6"
-          name: "Trainers"
-        trainee:
-          num: "40"
-          name: "Trainee"
-        course:
-          num: "4"
-          name: "Course"
-        map: "Maps"
-        visitors: "Visitors"
-    courses:
-      course: "Courses"
-      ma: "[DN-OE09-Ruby]"
-      name: "Da Nang Open Batch 9"
-      detail: "Ruby Open Education training"
-      numtrainers: ": 3"
-      numtrainee: ": 19"
-    subjects:
+      title: "List Courses"
+      h1: "List Courses"
+  index:
+    home:
+      dashboard: "Dashboard"
+      panel: "Control panel"
+      more_info: "More info"
+      trainers:
+        num: "6"
+        name: "Trainers"
+      trainee:
+        num: "40"
+        name: "Trainee"
+      course:
+        num: "4"
+        name: "Course"
+      map: "Maps"
+      visitors: "Visitors"
+  subjects:
+    index:
       sub: "Subjects"
       name: "Git Tutorial "
       time: "2 days"
+      course: "Courses"
+      subject: "Subjects"
+      home: "Home"
       detail: "Start Git for your project today."
       link: "[Show content]"
-    tasks:
-      h3: "Trainees progress"
-      name: "From zero to deploy"
-      detail: "Get an introduction to numbers, Strings, properties, and methods."
-
