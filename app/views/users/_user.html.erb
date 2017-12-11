@@ -1,0 +1,9 @@
+<li>
+  <%= image_tag current_user.avatar, size: Settings.image.maximum_length %>
+  <%= link_to user.username, user %>
+  <% if current_user.trainer? %>
+   | <%= link_to t(".delete"), user, method: :delete,
+      data: {confirm: t(".sure")} %>
+  <% end %>
+</li>
+

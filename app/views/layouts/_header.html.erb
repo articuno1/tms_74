@@ -8,16 +8,16 @@
       <ul class="nav navbar-nav">
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <%= image_tag @user.avatar, size: Settings.size.user_image %>
+            <%= image_tag current_user.avatar, size: Settings.size.user_image %>
             <span class="hidden-xs"><%= t "layouts.header.account" %><b class="caret"></b></span>
           </a>
           <% if logged_in? %>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <%= image_tag @user.avatar, size: Settings.size.user_image %>
+                <%= image_tag current_user.avatar, size: Settings.size.user_image %>
                 <p>
-                  <%= @user.fullname %>
+                  <%= current_user.fullname %>
                   <small><%= t "layouts.header.calender" %></small>
                 </p>
               </li>
@@ -37,14 +37,14 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-
-                  <%= link_to  user_path(current_user), class: "btn btn-default btn-flat" do %>
+                  <%= link_to user_path(current_user), class: "btn btn-default btn-flat" do %>
                       <%= t "layouts.header.profile" %>
                   <% end%>
                 </div>
                 <div class="pull-right">
-                  <li><%= link_to t(".edit"), edit_user_path(current_user)%></li>
-                  <li><%= link_to t(".signup"), signup_path %></li>
+                  <% if current_user.trainer? %>
+                    <li><%= link_to t(".signup"), signup_path %></li>
+                  <% end %>
                   <li class="divider"></li>
                   <li><%= link_to t(".signout"), signout_path, method: :delete %></li>
                 </div>

@@ -1,1 +1,32 @@
-
+<% provide :title, t(".title") %>
+<br>
+<div class="container-fluid well span6">
+  <div class="row-fluid">
+    <div class="span2">
+      <%= image_tag current_user.avatar, size: Settings.image.maximum_length, class: "img-circle" %>
+    </div>
+    <div class="span8">
+      <h3><%= @user.username %></h3>
+        <h6><%= t ".fullname" %><%= @user.fullname %></h6>
+        <h6><%= t ".university" %><%= @user.university %></h6>
+        <h6><%= t ".join" %><%= @user.created_at %></h6>
+        <h6><a href="#"><%= t(".more") %></a></h6>
+    </div>
+    <% if current_user?(@user) %>
+      <div class="span2">
+        <div class="btn-group">
+          <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+            <%= t ".action" %>
+            <span class="icon-cog icon-white"></span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <span class="icon-wrench"></span>
+              <%= link_to t(".modify"), edit_user_path(current_user) %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
