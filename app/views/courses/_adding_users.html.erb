@@ -1,8 +1,8 @@
 <li>
-  <%= link_to subject.id %>.<%= link_to subject.name_subject, "#" %>
+  <%= link_to user.username, "#" %>
   <% if current_user.trainer? %>
-    <%= form_for(@course.course_subjects.build) do |f| %>
-      <div><%= hidden_field_tag :subject_id, subject.id %></div>
+    <%= form_for(@course.user_courses.build) do |f| %>
+      <div><%= hidden_field_tag :user_id, user.id %></div>
       <div><%= hidden_field_tag :course_id, @course.id %></div>
       <%= f.submit t(".add"), class: "btn btn-success" %>
     <% end %>

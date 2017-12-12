@@ -81,6 +81,8 @@ en:
     success_destroy_course: "Delete Courses Succesfully"
     danger_destroy_course: "Delete Courses not Succesfully"
     in_progress: "Courses in progress"
+    success_update: "Update Success"
+    danger_success_update: "Not Success"
   activerecord:
     errors:
       models:
@@ -162,13 +164,31 @@ en:
     course:
       confirm: "Delete ?"
       delete: "Delete"
+      edit: "Edit"
     added_subjects:
       remove: "Delete"
       sure: "Sure?"
     adding_subjects:
       add: "Add to Course"
+    adding_users:
+      add: "Add"
+    added_users:
+      remove: "Remove"
+      sure: "Sure?"
     form:
       create_sb: "Create Subjects"
+    edit:
+      title: "Edit Course "
+      h1: "Edit Course "
+      subjects: "Subjects of this Course"
+      trainees: "Trainees of this Course"
+      trainers: "Trainers of this Course"
+      another_sb: "Another Subjects"
+      another_trainer: "Another Trainers"
+      another_trainee: "Another Trainees"
+      update: "Update"
+      notify_trainer: "Don't have trainers"
+      notify_trainee: "Don't have trainees"
   index:
     home:
       dashboard: "Dashboard"

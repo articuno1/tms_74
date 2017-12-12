@@ -4,6 +4,7 @@
   <%= link_to course.name_course, course %>
   <% if current_user.trainer? %>
     | <%= link_to t(".delete"), course, method: :delete, data: {confirm: t(".confirm")} %>
+    | <%= link_to t(".edit"), edit_course_path(course) %>
   <% end %>
   <p><%= course.info_detail %></p>
 </li>

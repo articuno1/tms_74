@@ -58,6 +58,13 @@ class UsersController < ApplicationController
     redirect_to signup_path
   end
 
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:warning] = "Please, resignin"
+    redirect_to signin_path
+  end
+
   def logged_in_user
     return if logged_in?
     store_location

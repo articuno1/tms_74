@@ -15,11 +15,13 @@
           <ul>
             <%= render partial: "added_subjects", collection: @subjects, as: :subject %>
           </ul>
-          <% if @all_subjects.present? %>
-            <ul class="ls-sub">
-              <p><%= t ".another_sb" %></p>
-              <%= render partial: "adding_subjects", collection: @all_subjects, as: :subject %>
-            </ul>
+          <% if current_user.trainer? %>
+            <% if @all_subjects.present? %>
+              <ul class="ls-sub">
+                <p><%= t ".another_sb" %></p>
+                <%= render partial: "adding_subjects", collection: @all_subjects, as: :subject %>
+              </ul>
+            <% end %>
           <% end %>
         </td>
         <td>

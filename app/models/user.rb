@@ -25,6 +25,8 @@ class User < ApplicationRecord
   enum role: {trainer: 0, trainee: 1}
   scope :alphabet_name, ->{order :username}
   scope :with_trainerOrtrainee, ->(role){where role: role}
+  scope :without_course, ->(course){where.not id: course.user_ids}
+  scope :find_users_not_in_course, ->(course){where("id NOT IN(?)", course.user_ids) if course.user_ids.present?}
 
   class << self
     def digest string

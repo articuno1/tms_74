@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :courses
   resources :subjects
   resources :tasks, only: :index
-  resources :course_subjects, only: %i(create destroy)
+  resources :course_subjects
+  resources :user_courses, only: %i(create destroy)
   get "/index", to: "index#index"
 end

@@ -1,0 +1,6 @@
+<li>
+  <%= link_to user.id, "#" %> . <%= link_to user.username, "#" %>
+  <% if current_user.trainer? %>
+    <%= link_to t(".remove"), user_course_path(user_id: user.id), method: :delete, confirm: t(".sure"), class: "btn btn-danger" %>
+  <% end %>
+</li>

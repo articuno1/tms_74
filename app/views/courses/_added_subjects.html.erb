@@ -1,4 +1,6 @@
 <li>
   <%= link_to subject.id, "#" %> . <%= link_to subject.name_subject, "#" %>
-  <%= link_to t(".remove"), course_subject_path(subject_id: subject.id), method: :delete, confirm: t(".sure"),class: "btn btn-danger" %>
+  <% if current_user.trainer? %>
+    <%= link_to t(".remove"), course_subject_path(subject_id: subject.id), method: :delete, confirm: t(".sure"), class: "btn btn-danger" %>
+  <% end %>
 </li>

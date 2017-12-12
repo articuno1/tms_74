@@ -47,6 +47,27 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
 
+  def edit
+    load_course
+    load_subjects
+    load_trainers_trainees @course
+    @all_subjects = Subject.find_subjects_not_in_course @course
+    @subjects = @course.subjects
+    load_trainers
+    load_trainees
+  end
+
+  def update
+    @course = Course.find_by id: params[:id]
+    if @course.update_attributes courses_params
+      flash[:success] = t "flash.success_update"
+      redirect_to courses_path
+    else
+      flash[:danger] = t "flash.danger_success_update"
+      render :edit
+    end
+  end
+
   def load_trainers_trainees course
     @trainers = course.users.with_trainerOrtrainee(:trainer).alphabet_name.paginate page: params[:page],
       per_page: Settings.trainer.per_page
@@ -54,12 +75,14 @@ class CoursesController < ApplicationController
       per_page: Settings.trainer.per_page
   end
 
-  private
-
   def load_subjects
-    @subjects = @course.subjects.paginate page: params[:page], per_page: Settings.per_page
-    @course_subjects = @course.course_subjects.paginate page: params[:page], per_page: Settings.per_page
+    @subjects = @course.subjects.paginate page: params[:page],
+      per_page: Settings.per_page
+    @course_subjects = @course.course_subjects.paginate page: params[:page],
+      per_page: Settings.per_page
   end
+
+  private
 
   def load_course
     @course = Course.find_by id: params[:id]
@@ -71,5 +94,19 @@ class CoursesController < ApplicationController
   def course_params
     params.require(:course).permit(:name_course, :info_detail,
       course_subjects_attributes: [:id, :subject_id])
+  end
+
+  def courses_params
+    params.require(:course).permit(:name_course, :info_detail)
+  end
+
+  def load_trainers
+    @all_trainers = @course.users.trainer
+    @trainerss = User.find_users_not_in_course(@course).trainer
+  end
+
+  def load_trainees
+    @all_trainers = @course.users.trainee
+    @traineess = User.find_users_not_in_course(@course).trainee
   end
 end

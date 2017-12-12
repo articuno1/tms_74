@@ -1,0 +1,50 @@
+<% provide :title, t(".title") %>
+<% provide :button_text, t(".update") %>
+<h1><%= t ".h1" %><%= @course.name_course %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "form_edit"%>
+    <br>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4"><%= t ".subjects" %>
+    <ul>
+      <%= render partial: "added_subjects", collection: @subjects, as: :subject %>
+    </ul>
+    <% if current_user.trainer? %>
+      <% if @all_subjects.present? %>
+        <ul class="ls-sub">
+          <p><%= t ".another_sb" %></p>
+            <%= render partial: "adding_subjects", collection: @all_subjects, as: :subject %>
+              </ul>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-md-4"><%= t ".trainers" %>
+    <ul class="lb-sub">
+        <% if @trainers.present? %>
+          <%= render partial: "added_users", collection: @trainers, as: :user %>
+        <% else %>
+          <%= t ".notify_trainer" %>
+        <% end %>
+        <br><ul class="lb-sub">
+          <p><%= t ".another_trainer" %></p>
+            <%= render partial: "adding_users", collection: @trainerss, as: :user %>
+        </ul>
+    </ul>
+  </div>
+  <div class="col-md-4"><%= t ".trainees" %>
+    <ul class="lb-sub">
+      <% if @trainees.present? %>
+        <%= render partial: "added_users", collection: @trainees, as: :user %>
+      <% else %>
+        <%= t".notify_trainee" %>
+      <% end %>
+      <br><ul class="lb-sub">
+        <p><%= t ".another_trainee" %></p>
+          <%= render partial: "adding_users", collection: @traineess, as: :user %>
+      </ul>
+    </ul>
+  </div>
+</div>
