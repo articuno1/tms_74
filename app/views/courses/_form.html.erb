@@ -1,13 +1,21 @@
 <%= form_for @course do |f| %>
   <%= render "shared/error_messages", object: @course %>
+  <div class="field">
+    <%= f.label :name_course %>
+    <%= f.text_field :name_course, class: "form-control" %>
 
-  <%= f.label :name_course %>
-  <%= f.text_field :name_course, class: "form-control" %>
-
-  <%= f.label :info_detail %>
-  <%= f.text_field :info_detail, class: "form-control" %>
-
-  <%= render @subjects %>
-
+    <%= f.label :info_detail %>
+    <%= f.text_field :info_detail, class: "form-control" %>
+  </div>
+  <%= f.fields_for @subjects do |f| %>
+    <ul>
+      <%= collection_check_boxes(:subject, :subject_ids, @subjects, :id, :name_subject) do |b| %>
+      <li>
+        <%= b.label("data-value": b.value) {b.check_box(class: "check_box")} %>
+        <%= b.text %>
+      </li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

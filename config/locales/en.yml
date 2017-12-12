@@ -76,6 +76,7 @@ en:
     nottrainer: "Sorry, You don't have permission to access"
     load_user: "Please, Loading page"
     danger1: "Not Found Courses"
+    danger2: "Not Found"
     success_create_course: "Create Courses Succesfully"
     success_destroy_course: "Delete Courses Succesfully"
     danger_destroy_course: "Delete Courses not Succesfully"
@@ -149,6 +150,7 @@ en:
       subjects: "Subjects of this Course"
       trainees: "Trainees of this Course"
       trainers: "Trainers of this Course"
+      another_sb: "Another Subjects"
     index:
       title: "List Courses"
       h1: "List Courses"
@@ -160,6 +162,13 @@ en:
     course:
       confirm: "Delete ?"
       delete: "Delete"
+    added_subjects:
+      remove: "Delete"
+      sure: "Sure?"
+    adding_subjects:
+      add: "Add to Course"
+    form:
+      create_sb: "Create Subjects"
   index:
     home:
       dashboard: "Dashboard"

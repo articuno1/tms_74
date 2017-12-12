@@ -20,3 +20,4 @@
 //= require turbolinks
 //= require bootstrap3-wysihtml5.all.min
 //= require jquery.dataTables.js
+//= require nested_form_fields

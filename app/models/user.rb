@@ -24,7 +24,7 @@ class User < ApplicationRecord
   validates :university, presence: true
   enum role: {trainer: 0, trainee: 1}
   scope :alphabet_name, ->{order :username}
-  scope :with_trainerOrtrainee, -> (role){where role: role}
+  scope :with_trainerOrtrainee, ->(role){where role: role}
 
   class << self
     def digest string

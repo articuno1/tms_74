@@ -3,29 +3,32 @@
   <h1><%= @course.name_course %></h1>
   <h2><%= t(".desc") %><%= @course.info_detail %></h2>
   <h2><%= t(".created") %><%= @course.created_at %></h2>
-  <table>
+  <table class="table table-striped">
     <thead>
       <th><%= t ".subjects" %></th>
       <th><%= t ".trainers" %></th>
       <th><%= t ".trainees" %></th>
     </thead>
-    <td>
-      <ul class="ls-sub">
-        <%= render @subjects %>
-        <%= will_paginate @subjects %>
-      </ul>
-    </td>
-    <td>
-      <ul class="ls-sub">
-        <%= render @trainers %>
-        <%= will_paginate @trainers %>
-      </ul>
-    </td>
-    <td>
-      <ul class="ls-sub">
-        <%= render @trainees %>
-        <%= will_paginate @trainees %>
-      </ul>
-    </td>
+    <tbody>
+      <tr>
+        <td>
+          <ul>
+            <%= render partial: "added_subjects", collection: @subjects, as: :subject %>
+          </ul>
+          <% if @all_subjects.present? %>
+            <ul class="ls-sub">
+              <p><%= t ".another_sb" %></p>
+              <%= render partial: "adding_subjects", collection: @all_subjects, as: :subject %>
+            </ul>
+          <% end %>
+        </td>
+        <td>
+            <%= render @trainers %>
+        </td>
+        <td>
+            <%= render @trainees %>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
