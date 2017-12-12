@@ -1,0 +1,25 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <h1><%= @course.name_course %></h1>
+  <h2><%= t(".desc") %><%= @course.info_detail %></h2>
+  <h2><%= t(".created") %><%= @course.created_at %></h2>
+  <table>
+    <thead>
+      <th><%= t ".subjects" %></th>
+      <th><%= t ".trainers" %></th>
+      <th><%= t ".trainees" %></th>
+    </thead>
+    <td>
+      <ul class="ls-sub">
+        <%= render @subjects %>
+        <%= will_paginate @subjects %>
+      </ul>
+    </td>
+    <td>
+      <li><%= link_to t(".trainees"), "#" %></li>
+    </td>
+    <td>
+      <li><%= link_to t(".trainers"), "#" %></li>
+    </td>
+  </table>
+</div>

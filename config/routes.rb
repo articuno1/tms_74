@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "static_pages/help", as: :help
   get "static_pages/contact", as: :contact
   resources :users, except: :new
-  resources :courses, only: :index
+  resources :courses, only: %i(index show)
   resources :subjects, only: :index
   resources :tasks, only: :index
   get "/index", to: "index#index"
