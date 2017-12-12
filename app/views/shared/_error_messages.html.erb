@@ -1,7 +1,7 @@
-<% if @user.errors.present? %>
+<% if object.errors.present? %>
   <div id="error_explanation">
     <ul>
-      <% @user.errors.full_messages.each do |errors| %>
+      <% object.errors.full_messages.each do |errors| %>
         <li><%= errors %></li>
       <% end %>
     </ul>
