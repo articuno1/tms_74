@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211161202) do
+ActiveRecord::Schema.define(version: 20171212135557) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20171211161202) do
     t.text "info_detail"
     t.date "begin_day"
     t.date "end_day"
-    t.boolean "status_course"
+    t.integer "status_course", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name_course"], name: "index_courses_on_name_course"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20171211161202) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_user_courses_on_course_id"
+    t.index ["user_id", "course_id"], name: "index_user_courses_on_user_id_and_course_id", unique: true
     t.index ["user_id"], name: "index_user_courses_on_user_id"
   end
 

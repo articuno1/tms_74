@@ -17,3 +17,5 @@ warning:
 per_page: 3
 image:
   maximum_length: 50
+trainer:
+  per_page: 4

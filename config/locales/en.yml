@@ -76,6 +76,10 @@ en:
     nottrainer: "Sorry, You don't have permission to access"
     load_user: "Please, Loading page"
     danger1: "Not Found Courses"
+    success_create_course: "Create Courses Succesfully"
+    success_destroy_course: "Delete Courses Succesfully"
+    danger_destroy_course: "Delete Courses not Succesfully"
+    in_progress: "Courses in progress"
   activerecord:
     errors:
       models:
@@ -148,6 +152,14 @@ en:
     index:
       title: "List Courses"
       h1: "List Courses"
+      add_btn: "Create new course"
+    new:
+      title: "Create new course"
+      h1: "Create new course"
+      create: "Create"
+    course:
+      confirm: "Delete ?"
+      delete: "Delete"
   index:
     home:
       dashboard: "Dashboard"

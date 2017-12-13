@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, except: :new
   before_action :find_user, except: %i(create new index)
   before_action :correct_user, only: %i(edit update)
+
   def new
     @user = User.new
   end
