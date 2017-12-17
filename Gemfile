@@ -14,12 +14,13 @@ gem "config"
 gem "faker", "1.7.3"
 gem "fog", "1.40.0"
 gem "font-awesome-rails"
-gem "jquery-datatables-rails", "~> 3.4"
 gem "jbuilder", "~> 2.5"
 gem "jquery"
+gem "jquery-datatables-rails", "~> 3.4"
 gem "jquery-rails"
 gem "mini_magick", "4.7.0"
 gem "mysql2", "~> 0.4.10"
+gem "nested_form_fields"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.4"
 gem "sass-rails", "~> 5.0"
@@ -32,6 +33,7 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
+  gem "pry-rails"
 end
 
 group :development do

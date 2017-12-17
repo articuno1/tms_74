@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get "static_pages/contact", as: :contact
   resources :users, except: :new
   resources :courses
-  resources :subjects, only: :index
+  resources :subjects
   resources :tasks, only: :index
+  resources :course_subjects, only: %i(create destroy)
   get "/index", to: "index#index"
 end
